@@ -1,3 +1,4 @@
+from django.utils.safestring import mark_safe
 class Pagination:
 
     def __init__(self, page_now, total_data,url, per_data=10, max_show=11):
@@ -65,6 +66,6 @@ class Pagination:
             li_list.append('<li><a href="?{}">下一页</a></li>'.format(self.url.urlencode()))
 
         li_list = ''.join(li_list)
-        return li_list
+        return mark_safe(li_list)
 
 
